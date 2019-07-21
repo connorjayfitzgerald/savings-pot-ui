@@ -26,7 +26,7 @@ node {
     stage('Deploy') {
         ansiColor('xterm') {
             ansiblePlaybook(
-                playbook: 'CI/ansible-deploy.yaml',
+                playbook: 'ansible-deploy.yaml',
                 colorized: true
             )
         }
