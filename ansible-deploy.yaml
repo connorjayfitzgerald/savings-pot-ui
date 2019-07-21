@@ -1,0 +1,18 @@
+- hosts: webserver
+  become: yes
+  tasks:
+    - name: Pull the new image
+      docker_image:
+        name: connorfitzgerald/savings-pot-ui:latest
+    - name: Re-create the Savings Pot UI container
+      docker_container:
+        name: savings-pot-ui
+        image: connorfitzgerald/savings-pot-ui:latest
+        state: started
+        recreate: yes
+        restart_policy: unless-stopped
+        published_ports:
+          - 5000:5000
+        purge_networks: yes
+        networks:
+          - name: savings_pot_net
