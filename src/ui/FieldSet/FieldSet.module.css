@@ -1,0 +1,39 @@
+.FieldSet {
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.479);
+    border-radius: 5px;
+    color: white;
+}
+
+legend {
+    margin-left: 5px;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.479);
+    min-height: 25px;
+}
+
+input {
+    padding: 0 8px;
+    margin: 0;
+    width: 100%;
+    background: 0;
+    border: 0;
+    color: white;
+    margin-bottom: 9px;
+    font-size: 20px;
+}
+
+input:focus {
+    border: 0;
+    outline: 0;
+}
+
+/* input:focus + legend {
+    transition-property: font-size;
+    transition-duration: 0.2s;
+    font-size: 12px;
+} */
+
+input::placeholder {
+    visibility: hidden;
+}

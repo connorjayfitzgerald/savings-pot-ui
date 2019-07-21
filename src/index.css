@@ -1,4 +1,9 @@
 body {
     background-color: green;
     margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
 }

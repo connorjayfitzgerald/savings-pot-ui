@@ -1,17 +1,13 @@
 // ------------------------------- NODE MODULES -------------------------------
 
-import React, { DetailedHTMLProps } from 'react';
-
 // ------------------------------ CUSTOM MODULES ------------------------------
 
-import classes from './Input.module.css';
+import { Button } from './Button/Button';
+import { FieldSet } from './FieldSet/FieldSet';
+import { Input } from './Input/Input';
 
 // -------------------------------- VARIABLES ---------------------------------
 
 // ----------------------------- FILE DEFINITION ------------------------------
 
-export const Input = (
-    props: DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
-): JSX.Element => {
-    return <input className={classes.Input} {...props} />;
-};
+export { Button, FieldSet, Input };

@@ -1,22 +1,32 @@
 // ------------------------------- NODE MODULES -------------------------------
 
-import React from 'react';
+import React, { FormEvent } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPiggyBank } from '@fortawesome/free-solid-svg-icons';
 
 // ------------------------------ CUSTOM MODULES ------------------------------
 
-import { Input } from '../../../ui/Input/Input';
-import { Button } from '../../../ui/Button/Button';
+import classes from './Login.module.css';
+import { Button, FieldSet } from '../../../ui';
 
 // -------------------------------- VARIABLES ---------------------------------
 
 // ----------------------------- FILE DEFINITION ------------------------------
 
 export const Login = (): JSX.Element => {
+    const attemptLogin = (event: FormEvent<HTMLFormElement>): void => {
+        event.preventDefault();
+    };
+
     return (
-        <div>
-            <Input placeholder="Username"></Input>
-            <Input placeholder="Password"></Input>
+        <form onSubmit={attemptLogin} className={classes.Login}>
+            <FontAwesomeIcon size="6x" icon={faPiggyBank} />
+            <FieldSet placeholder="Username" />
+            <FieldSet placeholder="Password" type="password" />
             <Button>Log In</Button>
-        </div>
+            <p>
+                <a href="/register">Click here</a> to sign up
+            </p>
+        </form>
     );
 };

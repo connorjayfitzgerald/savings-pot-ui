@@ -4,7 +4,7 @@ import React, { DetailedHTMLProps } from 'react';
 
 // ------------------------------ CUSTOM MODULES ------------------------------
 
-import './Button.css';
+import classes from './Button.module.css';
 
 // -------------------------------- VARIABLES ---------------------------------
 
@@ -13,5 +13,5 @@ import './Button.css';
 export const Button = (
     props: DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>,
 ): JSX.Element => {
-    return <button className="Button">{props.children}</button>;
+    return <button className={classes.Button}>{props.children}</button>;
 };

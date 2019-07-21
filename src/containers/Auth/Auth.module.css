@@ -6,10 +6,4 @@
     text-align: center;
     align-items: center;
     padding: 30px;
-    box-sizing: border-box;
-}
-
-.Auth input {
-    width: 100%;
-    margin-bottom: 40px;
 }
