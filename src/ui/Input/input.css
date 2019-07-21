@@ -1,0 +1,15 @@
+.Input {
+    background: 0;
+    border: 0;
+    border-bottom: 2px solid white;
+    color: white;
+    height: 30px;
+}
+
+.Input::placeholder {
+    color: rgb(185, 185, 185);
+}
+
+.Input:focus {
+    outline: 0;
+}

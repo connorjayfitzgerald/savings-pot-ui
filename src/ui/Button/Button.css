@@ -1,0 +1,12 @@
+.Button {
+    background: 0;
+    border: 2px solid white;
+    height: 30px;
+    min-width: 100px;
+    color: white;
+    border-radius: 6px;
+}
+
+.Button:hover {
+    background: rgba(124, 122, 122, 0.589);
+}

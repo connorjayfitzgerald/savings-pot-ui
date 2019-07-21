@@ -4,21 +4,19 @@ import React from 'react';
 
 // ------------------------------ CUSTOM MODULES ------------------------------
 
-import './App.css';
-import { Auth } from './containers/Auth/Auth';
+import { Input } from '../../../ui/Input/Input';
+import { Button } from '../../../ui/Button/Button';
 
 // -------------------------------- VARIABLES ---------------------------------
 
 // ----------------------------- FILE DEFINITION ------------------------------
 
-export const App: React.FC = (): JSX.Element => {
-    const authenticated = false;
-
-    return authenticated ? (
+export const Login = (): JSX.Element => {
+    return (
         <div>
-            <p>Im in</p>
+            <Input placeholder="Username"></Input>
+            <Input placeholder="Password"></Input>
+            <Button>Log In</Button>
         </div>
-    ) : (
-        <Auth />
     );
 };

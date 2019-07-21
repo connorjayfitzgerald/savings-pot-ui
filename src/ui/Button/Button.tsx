@@ -1,24 +1,17 @@
 // ------------------------------- NODE MODULES -------------------------------
 
-import React from 'react';
+import React, { DetailedHTMLProps } from 'react';
 
 // ------------------------------ CUSTOM MODULES ------------------------------
 
-import './App.css';
-import { Auth } from './containers/Auth/Auth';
+import './Button.css';
 
 // -------------------------------- VARIABLES ---------------------------------
 
 // ----------------------------- FILE DEFINITION ------------------------------
 
-export const App: React.FC = (): JSX.Element => {
-    const authenticated = false;
-
-    return authenticated ? (
-        <div>
-            <p>Im in</p>
-        </div>
-    ) : (
-        <Auth />
-    );
+export const Button = (
+    props: DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>,
+): JSX.Element => {
+    return <button className="Button">{props.children}</button>;
 };

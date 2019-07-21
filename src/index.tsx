@@ -1,8 +1,17 @@
+// ------------------------------- NODE MODULES -------------------------------
+
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+// ------------------------------ CUSTOM MODULES ------------------------------
+
 import './index.css';
-import App from './App';
+import { App } from './App';
 import * as serviceWorker from './serviceWorker';
+
+// -------------------------------- VARIABLES ---------------------------------
+
+// ----------------------------- FILE DEFINITION ------------------------------
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

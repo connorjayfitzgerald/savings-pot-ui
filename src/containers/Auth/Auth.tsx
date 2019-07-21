@@ -4,21 +4,15 @@ import React from 'react';
 
 // ------------------------------ CUSTOM MODULES ------------------------------
 
-import './App.css';
-import { Auth } from './containers/Auth/Auth';
+import { Login } from './Login/Login';
+import './Auth.css';
 
 // -------------------------------- VARIABLES ---------------------------------
 
 // ----------------------------- FILE DEFINITION ------------------------------
 
-export const App: React.FC = (): JSX.Element => {
-    const authenticated = false;
+export const Auth = (): JSX.Element => {
+    const registering = false;
 
-    return authenticated ? (
-        <div>
-            <p>Im in</p>
-        </div>
-    ) : (
-        <Auth />
-    );
+    return <div className="Auth">{registering ? <p>Registering</p> : <Login />}</div>;
 };

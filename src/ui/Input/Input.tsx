@@ -1,24 +1,17 @@
 // ------------------------------- NODE MODULES -------------------------------
 
-import React from 'react';
+import React, { DetailedHTMLProps } from 'react';
 
 // ------------------------------ CUSTOM MODULES ------------------------------
 
-import './App.css';
-import { Auth } from './containers/Auth/Auth';
+import './input.css';
 
 // -------------------------------- VARIABLES ---------------------------------
 
 // ----------------------------- FILE DEFINITION ------------------------------
 
-export const App: React.FC = (): JSX.Element => {
-    const authenticated = false;
-
-    return authenticated ? (
-        <div>
-            <p>Im in</p>
-        </div>
-    ) : (
-        <Auth />
-    );
+export const Input = (
+    props: DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+): JSX.Element => {
+    return <input className="Input" {...props} />;
 };
