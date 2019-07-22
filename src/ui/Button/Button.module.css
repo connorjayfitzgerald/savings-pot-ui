@@ -5,6 +5,7 @@
     min-width: 100px;
     color: white;
     border-radius: 6px;
+    font-size: 17px;
 }
 
 .Button:hover {

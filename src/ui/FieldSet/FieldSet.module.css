@@ -12,6 +12,15 @@ legend {
     min-height: 25px;
 }
 
+.Invalid {
+    color: red;
+    border-color: red;
+}
+
+.Invalid legend {
+    color: red;
+}
+
 input {
     padding: 0 8px;
     margin: 0;
@@ -26,14 +35,4 @@ input {
 input:focus {
     border: 0;
     outline: 0;
-}
-
-/* input:focus + legend {
-    transition-property: font-size;
-    transition-duration: 0.2s;
-    font-size: 12px;
-} */
-
-input::placeholder {
-    visibility: hidden;
 }

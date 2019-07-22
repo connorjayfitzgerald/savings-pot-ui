@@ -1,32 +1,33 @@
 // ------------------------------- NODE MODULES -------------------------------
 
 import React, { FormEvent } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPiggyBank } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
 // ------------------------------ CUSTOM MODULES ------------------------------
 
-import classes from './Login.module.css';
-import { Button, FieldSet } from '../../../ui';
+import { FieldSet, Button } from '../../../ui';
+import classes from './Register.module.css';
 
 // -------------------------------- VARIABLES ---------------------------------
 
 // ----------------------------- FILE DEFINITION ------------------------------
 
-export const Login = (): JSX.Element => {
-    const attemptLogin = (event: FormEvent<HTMLFormElement>): void => {
+export const Register = (): JSX.Element => {
+    const attemptRegister = (event: FormEvent<HTMLFormElement>): void => {
         event.preventDefault();
     };
 
     return (
-        <form onSubmit={attemptLogin} className={classes.Login}>
-            <FontAwesomeIcon size="6x" icon={faPiggyBank} />
+        <form onSubmit={attemptRegister} className={classes.Register}>
+            <FieldSet invalid placeholder="Forename" />
+            <FieldSet placeholder="Surname" />
             <FieldSet placeholder="Username" />
+            <FieldSet placeholder="Email" type="email" />
             <FieldSet placeholder="Password" type="password" />
-            <Button>Log In</Button>
+            <FieldSet placeholder="Confirm Password" type="password" />
+            <Button>Register</Button>
             <p>
-                <Link to="/register">Click here</Link> to sign up
+                <Link to="/">Click here</Link> to go back
             </p>
         </form>
     );

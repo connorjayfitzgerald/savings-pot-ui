@@ -1,6 +1,6 @@
 // ------------------------------- NODE MODULES -------------------------------
 
-import React, { DetailedHTMLProps } from 'react';
+import React from 'react';
 
 // ------------------------------ CUSTOM MODULES ------------------------------
 
@@ -10,12 +10,22 @@ import classes from './FieldSet.module.css';
 
 // ----------------------------- FILE DEFINITION ------------------------------
 
-export const FieldSet = (
-    props: DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
-): JSX.Element => {
+interface FieldSetProps {
+    invalid?: boolean;
+    placeholder: string;
+    type?: string;
+}
+
+export const FieldSet = (props: FieldSetProps): JSX.Element => {
+    const appliedClasses = [classes.FieldSet];
+
+    if (props.invalid) {
+        appliedClasses.push(classes.Invalid);
+    }
+
     return (
-        <fieldset className={classes.FieldSet}>
-            <input {...props}></input>
+        <fieldset className={appliedClasses.join(' ')}>
+            <input type={props.type}></input>
             <legend>{props.placeholder}</legend>
         </fieldset>
     );
