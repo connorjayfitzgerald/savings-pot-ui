@@ -11,9 +11,8 @@ RUN npm run build
 
 # Run Stage
 FROM node:10.15.3 As runner
-RUN npm install -g serve
 WORKDIR /root
 COPY package.json package-lock.json ./
 RUN npm install --only=prod
 COPY --from=builder /tmp/build/build build
-CMD ["serve", "-s", "build"]  
+CMD ["npm", "run", "serve"]  
