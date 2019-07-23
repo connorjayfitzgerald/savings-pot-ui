@@ -1,6 +1,6 @@
 // ------------------------------- NODE MODULES -------------------------------
 
-import React, { FormEvent } from 'react';
+import React, { FormEvent, useState, ChangeEvent } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPiggyBank } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
@@ -19,11 +19,18 @@ export const Login = (): JSX.Element => {
         event.preventDefault();
     };
 
+    const [details] = useState({
+        username: '',
+        password: '',
+    });
+
+    const inputChangeHandler = (event: ChangeEvent<HTMLInputElement>): void => {};
+
     return (
         <form onSubmit={attemptLogin} className={classes.Login}>
             <FontAwesomeIcon size="6x" icon={faPiggyBank} />
-            <FieldSet placeholder="Username" />
-            <FieldSet placeholder="Password" type="password" />
+            <FieldSet placeholder="Username" value={details.username} onChange={inputChangeHandler} />
+            <FieldSet placeholder="Password" type="password" value={details.username} onChange={inputChangeHandler} />
             <Button>Log In</Button>
             <p>
                 <Link to="/register">Click here</Link> to sign up

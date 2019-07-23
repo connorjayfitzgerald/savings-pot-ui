@@ -13,5 +13,9 @@ import classes from './Button.module.css';
 export const Button = (
     props: DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>,
 ): JSX.Element => {
-    return <button className={classes.Button}>{props.children}</button>;
+    return (
+        <button className={classes.Button} {...props}>
+            {props.children}
+        </button>
+    );
 };

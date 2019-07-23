@@ -1,4 +1,5 @@
 .Auth {
+    min-height: 700px;
     width: 100vw;
     height: 100vh;
     display: flex;

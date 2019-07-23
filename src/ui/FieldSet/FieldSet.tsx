@@ -1,6 +1,6 @@
 // ------------------------------- NODE MODULES -------------------------------
 
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 
 // ------------------------------ CUSTOM MODULES ------------------------------
 
@@ -14,6 +14,8 @@ interface FieldSetProps {
     invalid?: boolean;
     placeholder: string;
     type?: string;
+    value: string | number;
+    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const FieldSet = (props: FieldSetProps): JSX.Element => {
@@ -25,7 +27,7 @@ export const FieldSet = (props: FieldSetProps): JSX.Element => {
 
     return (
         <fieldset className={appliedClasses.join(' ')}>
-            <input type={props.type}></input>
+            <input type={props.type} value={props.value} onChange={props.onChange}></input>
             <legend>{props.placeholder}</legend>
         </fieldset>
     );

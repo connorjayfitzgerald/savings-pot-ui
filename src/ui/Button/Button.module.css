@@ -11,3 +11,12 @@
 .Button:hover {
     background: rgba(124, 122, 122, 0.589);
 }
+
+.Button:disabled {
+    border-color: rgba(124, 122, 122, 0.9);;
+    color: rgba(124, 122, 122, 0.9);
+}
+
+.Button:disabled:hover {
+    background: none;
+}
