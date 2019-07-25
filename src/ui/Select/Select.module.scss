@@ -1,0 +1,21 @@
+.Select {
+    width: 100%;
+    padding: 0 20px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+
+    select {
+        background: none;
+        border-radius: 3px;
+        color: white;
+        font-family: inherit;
+        width: 100%;
+        max-width: 150px;
+
+        option {
+            // background-color: lightgreen;
+            color: green;
+        }
+    }
+}

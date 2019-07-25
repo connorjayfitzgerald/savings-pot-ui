@@ -2,13 +2,11 @@
 
 // ------------------------------ CUSTOM MODULES ------------------------------
 
-import { Button } from './Button/Button';
-import { FieldSet } from './FieldSet/FieldSet';
-import { Input } from './Input/Input';
-import { Select } from './Select/Select';
+import { Navbar } from './Navbar/Navbar';
+import { SideDrawer } from './SideDrawer/SideDrawer';
 
 // -------------------------------- VARIABLES ---------------------------------
 
 // ----------------------------- FILE DEFINITION ------------------------------
 
-export { Button, FieldSet, Input, Select };
+export { Navbar, SideDrawer };

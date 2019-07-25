@@ -1,0 +1,28 @@
+.SummaryTile {
+    background-color: rgba(144, 238, 144, 0.712);
+    width: 40%;
+    min-height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.404);
+    position: relative;
+
+    svg {
+        margin: 0;
+    }
+
+    h3 {
+        margin: 0;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 0 10px;
+        color: white;
+    }
+}
+
+.Down {
+    background-color: rgba(255, 86, 86, 0.712)
+}

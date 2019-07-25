@@ -13,11 +13,15 @@ import { Register } from './Register/Register';
 
 // ----------------------------- FILE DEFINITION ------------------------------
 
-export const Auth = (): JSX.Element => {
+interface AuthProps {
+    toggleAuth: () => void;
+}
+
+export const Auth = (props: AuthProps): JSX.Element => {
     return (
         <div className={classes.Auth}>
             <Switch>
-                <Route path="/" exact component={Login} />
+                <Route path="/" exact render={() => <Login toggleAuth={props.toggleAuth} />} />
                 <Route path="/register" exact component={Register} />
                 <Redirect to="/" />
             </Switch>

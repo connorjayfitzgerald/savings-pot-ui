@@ -1,0 +1,15 @@
+.Burger {
+    width: 50px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+
+    svg {
+        margin: 0;
+
+        &:hover {
+            color: grey;
+            cursor: pointer;
+        }
+    }
+}
