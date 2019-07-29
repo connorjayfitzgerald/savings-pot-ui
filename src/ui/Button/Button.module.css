@@ -13,8 +13,8 @@
 }
 
 .Button:disabled {
-    border-color: rgba(124, 122, 122, 0.9);;
-    color: rgba(124, 122, 122, 0.9);
+    border-color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.4);
 }
 
 .Button:disabled:hover {

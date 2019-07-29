@@ -1,19 +1,23 @@
 .Tiles {
     display: flex;
     justify-content: space-evenly;
-    margin: 20px 0;
+    margin-bottom: 10px;
 }
 
 .Summary {
     h2 {
         text-align: center;
         color: white;
+        margin: 5px;
     }
 
     .Title {
-        border-radius: 5px;
-        margin: 20px 16px;
-        background-color: white;
-        color: green;
+        // border-radius: 5px;
+        // margin: 20px 16px;
+        // background-color: white;
+        // color: green;
+        // box-shadow: 4px 4px rgba(0, 0, 0, 0.404);
+        text-decoration: underline;
+        margin: 5px;
     }
 }

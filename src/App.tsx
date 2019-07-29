@@ -15,7 +15,7 @@ import { Summary } from './containers/Summary/Summary';
 // ----------------------------- FILE DEFINITION ------------------------------
 
 export const App: React.FC = (): JSX.Element => {
-    const [authenticated, setAuthenticated] = useState(false);
+    const [authenticated, setAuthenticated] = useState(true);
 
     const toggleAuth = () => setAuthenticated(prevState => !prevState);
 

@@ -1,6 +1,6 @@
 .SideDrawer {
-    height: 100vh;
-    top: 0;
+    height: calc(100vh - 50px);
+    top: 50px;
     width: 70vw;
     z-index: 200;
     position: fixed;
@@ -8,11 +8,40 @@
     transition: transform .25s;
     display: flex;
     flex-direction: column;
-    padding: 16px;
+    padding-top: 32px;
     max-width: 300px;
+    align-items: center;
+
+    svg {
+        margin: 0;
+    }
+
+    button {
+        width: 100%;
+    }
 
     .SideDrawerLinks {
         flex-grow: 1;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        a {
+            background-color: white;
+            color: green;
+            padding: 8px 16px;
+            border-radius: 5px;
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+
+            &:hover {
+                background-color: lightgreen;
+                color: white;
+            }
+        }
     }
 
     &.Shown {
