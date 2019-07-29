@@ -1,6 +1,6 @@
 .SideDrawer {
-    height: calc(100vh - 50px);
-    top: 50px;
+    height: 100vh;
+    top: 0;
     width: 70vw;
     z-index: 200;
     position: fixed;
@@ -11,6 +11,7 @@
     padding-top: 32px;
     max-width: 300px;
     align-items: center;
+    padding-top: 70px;
 
     svg {
         margin: 0;
