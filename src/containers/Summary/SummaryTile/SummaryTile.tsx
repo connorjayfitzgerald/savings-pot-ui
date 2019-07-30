@@ -3,6 +3,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { RouteComponentProps, withRouter } from 'react-router-dom';
 
 // ------------------------------ CUSTOM MODULES ------------------------------
 
@@ -17,13 +18,13 @@ export enum Direction {
     DOWN = 'DOWN',
 }
 
-interface SummaryTileProps {
+interface SummaryTileProps extends RouteComponentProps {
     direction: Direction;
     value: number;
 }
 
-export const SummaryTile = (props: SummaryTileProps): JSX.Element => {
-    const Icon = <FontAwesomeIcon size="6x" icon={props.direction === Direction.UP ? faArrowUp : faArrowDown} />;
+const SummaryTileBase = (props: SummaryTileProps): JSX.Element => {
+    const Icon = <FontAwesomeIcon size="5x" icon={props.direction === Direction.UP ? faArrowUp : faArrowDown} />;
 
     const tileClasses = [classes.SummaryTile];
 
@@ -32,9 +33,14 @@ export const SummaryTile = (props: SummaryTileProps): JSX.Element => {
     }
 
     return (
-        <div className={tileClasses.join(' ')}>
+        <div
+            onClick={() => props.history.push(props.direction === Direction.UP ? '/incomings' : '/outgoings')}
+            className={tileClasses.join(' ')}
+        >
             {Icon}
             <h3>£{props.value.toFixed(2)}</h3>
         </div>
     );
 };
+
+export const SummaryTile = withRouter(SummaryTileBase);

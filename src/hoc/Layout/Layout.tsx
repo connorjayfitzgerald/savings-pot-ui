@@ -21,10 +21,8 @@ export const Layout = (props: LayoutProps): JSX.Element => {
 
     return (
         <Fragment>
-            <header>
-                <Navbar toggleDrawer={toggleDrawer} />
-                <SideDrawer shown={showDrawer} toggle={toggleDrawer} />
-            </header>
+            <Navbar toggleDrawer={toggleDrawer} />
+            <SideDrawer shown={showDrawer} toggle={toggleDrawer} />
             <main>{props.children}</main>
         </Fragment>
     );

@@ -4,8 +4,13 @@
     display: flex;
     justify-content: space-between;
     z-index: 300;
-    position: relative;
-    width: 100vw;
+    position: sticky;
+    top: 0;
+
+    nav {
+        display: flex;
+        flex-grow: 1;
+    }
 
     ul {
         margin: 0 22px;

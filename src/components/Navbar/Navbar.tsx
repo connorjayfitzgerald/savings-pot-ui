@@ -18,19 +18,21 @@ interface NavbarProps {
 
 export const Navbar = (props: NavbarProps): JSX.Element => {
     return (
-        <nav className={classes.Navbar}>
-            <Burger onClick={props.toggleDrawer} />
-            <ul>
-                <NavLink activeClassName={classes.Active} to="/">
-                    Summary
-                </NavLink>
-                <NavLink activeClassName={classes.Active} to="/something">
-                    Something
-                </NavLink>
-                <NavLink activeClassName={classes.Active} to="/something-else">
-                    Something Else
-                </NavLink>
-            </ul>
-        </nav>
+        <header className={classes.Navbar}>
+            <nav>
+                <Burger onClick={props.toggleDrawer} />
+                <ul>
+                    <NavLink activeClassName={classes.Active} exact to="/">
+                        Summary
+                    </NavLink>
+                    <NavLink activeClassName={classes.Active} to="/incomings">
+                        Incomings
+                    </NavLink>
+                    <NavLink activeClassName={classes.Active} to="/something-else">
+                        Something Else
+                    </NavLink>
+                </ul>
+            </nav>
+        </header>
     );
 };

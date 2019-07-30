@@ -1,0 +1,20 @@
+.Incoming {
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    color: green;
+    margin: 10px;
+
+    > * {
+        margin: 0;
+    }
+
+    p {
+        color: green;
+        margin: 0;
+
+        &.Capitalise {
+            text-transform: capitalize;
+        }
+    }
+}

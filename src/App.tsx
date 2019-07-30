@@ -9,13 +9,14 @@ import './App.css';
 import { Auth } from './containers/Auth/Auth';
 import { Layout } from './hoc/Layout/Layout';
 import { Summary } from './containers/Summary/Summary';
+import { Incomings } from './containers/Incomings/Incomings';
 
 // -------------------------------- VARIABLES ---------------------------------
 
 // ----------------------------- FILE DEFINITION ------------------------------
 
 export const App: React.FC = (): JSX.Element => {
-    const [authenticated, setAuthenticated] = useState(false);
+    const [authenticated, setAuthenticated] = useState(true);
 
     const toggleAuth = () => setAuthenticated(prevState => !prevState);
 
@@ -23,6 +24,7 @@ export const App: React.FC = (): JSX.Element => {
         <Layout>
             <Switch>
                 <Route path="/" exact component={Summary} />
+                <Route path="/incomings" exact component={Incomings} />
                 <Redirect to="/" />
             </Switch>
         </Layout>

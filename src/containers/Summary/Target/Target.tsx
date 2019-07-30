@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // ------------------------------ CUSTOM MODULES ------------------------------
 
 import classes from './Target.module.scss';
+import { formatDate } from '../../../utils';
 
 // -------------------------------- VARIABLES ---------------------------------
 
@@ -17,10 +18,6 @@ interface TargetProps {
     target: number;
     date: Date;
 }
-
-const formatDate = (date: Date) => {
-    return `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`;
-};
 
 export const Target = (props: TargetProps): JSX.Element => {
     const targetClasses = [classes.Target];
