@@ -15,7 +15,7 @@ import { Incomings } from './containers/Incomings/Incomings';
 // ----------------------------- FILE DEFINITION ------------------------------
 
 export const App: React.FC = (): JSX.Element => {
-    const [authenticated, setAuthenticated] = useState(true);
+    const [authenticated, setAuthenticated] = useState(false);
 
     const toggleAuth = () => setAuthenticated(prevState => !prevState);
 
