@@ -4,7 +4,7 @@ import React, { ChangeEvent } from 'react';
 
 // ------------------------------ CUSTOM MODULES ------------------------------
 
-import classes from './FieldSet.module.css';
+import classes from './FieldSet.module.scss';
 
 // -------------------------------- VARIABLES ---------------------------------
 

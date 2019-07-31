@@ -7,7 +7,7 @@ import { isAlpha, isLength, isEmail } from 'validator';
 // ------------------------------ CUSTOM MODULES ------------------------------
 
 import { FieldSet, Button } from '../../../ui';
-import classes from './Register.module.css';
+import classes from './Register.module.scss';
 
 // -------------------------------- VARIABLES ---------------------------------
 

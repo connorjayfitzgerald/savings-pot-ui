@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 // ------------------------------ CUSTOM MODULES ------------------------------
 
-import classes from './Login.module.css';
+import classes from './Login.module.scss';
 import { Button, FieldSet } from '../../../ui';
 
 // -------------------------------- VARIABLES ---------------------------------

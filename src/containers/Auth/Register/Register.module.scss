@@ -1,0 +1,32 @@
+.Register {
+    width: 100%;
+    max-width: 400px;
+
+    > fieldset {
+        margin-bottom: 10px;
+    }
+
+    button {
+        margin-top: 16px;
+    }
+
+    p, a {
+        color: white;
+    }
+
+    a {
+        cursor: pointer;
+
+        &:hover {
+            color: grey;
+        }
+    }
+}
+
+@media(min-width: 450px) {
+    .Register {
+        border: 1px solid white;
+        border-radius: 10px;
+        padding: 40px;
+    }
+}

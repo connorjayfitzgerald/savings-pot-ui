@@ -1,0 +1,33 @@
+.Login {
+    width: 100%;
+    max-width: 400px;
+
+    > fieldset {
+        margin-bottom: 20px;
+    }
+
+    p, a {
+        color: white;
+    }
+
+    a {
+        cursor: pointer;
+
+        &:hover {
+            color: grey;
+        }
+    }
+
+    svg {
+        color: white;
+        margin-bottom: 40px;
+    }
+}
+
+@media(min-width: 450px) {
+    .Login {
+        border: 1px solid white;
+        border-radius: 10px;
+        padding: 40px;
+    }
+}

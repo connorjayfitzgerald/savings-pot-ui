@@ -5,7 +5,6 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 
 // ------------------------------ CUSTOM MODULES ------------------------------
 
-import './App.css';
 import { Auth } from './containers/Auth/Auth';
 import { Layout } from './hoc/Layout/Layout';
 import { Summary } from './containers/Summary/Summary';

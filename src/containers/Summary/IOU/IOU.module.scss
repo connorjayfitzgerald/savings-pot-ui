@@ -2,22 +2,23 @@
     margin: 8px 16px;
     display: flex;
     align-items: center;
-    background-color: white;
+    border: 1px solid white;
     border-radius: 5px;
+    box-shadow: 1px 1px 5px;
+    color: white;
 
     p {
         margin: 0;
         padding: 0;
         font-size: 20px;
-        color: green;
     }
 
     svg {
-        color: green;
+        color: white;
         margin: 3px 16px;
     }
 
     &.Debt svg {
-        color: red;
+        color: rgba(255, 86, 86, 0.7);
     }
 }

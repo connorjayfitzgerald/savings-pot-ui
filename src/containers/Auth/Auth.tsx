@@ -6,7 +6,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 // ------------------------------ CUSTOM MODULES ------------------------------
 
 import { Login } from './Login/Login';
-import classes from './Auth.module.css';
+import classes from './Auth.module.scss';
 import { Register } from './Register/Register';
 
 // -------------------------------- VARIABLES ---------------------------------

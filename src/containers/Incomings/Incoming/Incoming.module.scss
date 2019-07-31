@@ -1,16 +1,16 @@
 .Incoming {
-    background-color: white;
+    border: 1px solid white;
     border-radius: 5px;
     text-align: center;
-    color: green;
+    color: white;
     margin: 10px;
+    box-shadow: 1px 1px 5px;
 
     > * {
         margin: 0;
     }
 
     p {
-        color: green;
         margin: 0;
 
         &.Capitalise {

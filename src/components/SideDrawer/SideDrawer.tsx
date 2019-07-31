@@ -2,8 +2,6 @@
 
 import React, { Fragment } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPiggyBank } from '@fortawesome/free-solid-svg-icons';
 
 // ------------------------------ CUSTOM MODULES ------------------------------
 
@@ -31,18 +29,49 @@ export const SideDrawer = (props: SideDrawerProps): JSX.Element => {
         overlayClasses.push(classes.Hidden);
     }
 
+    const links = [
+        {
+            to: '/',
+            text: 'Summary',
+        },
+        {
+            to: '/savings',
+            text: 'Savings',
+        },
+        {
+            to: '/incomings',
+            text: 'Incomings',
+        },
+        {
+            to: '/outgoings',
+            text: 'Outgoings',
+        },
+        {
+            to: '/ious',
+            text: 'IOUs',
+        },
+        {
+            to: '/settings',
+            text: 'Settings',
+        },
+    ];
+
     return (
         <Fragment>
             <div className={siderawerClasses.join(' ')}>
-                <FontAwesomeIcon size="6x" icon={faPiggyBank} />
                 <div className={classes.SideDrawerLinks}>
-                    <NavLink to="/">Summary</NavLink>
-                    <NavLink to="/incomings">Incomings</NavLink>
-                    <NavLink to="/outgoings">Outgoings</NavLink>
-                    <NavLink to="/ious">IOUs</NavLink>
-                    <NavLink to="/settings">Settings</NavLink>
-                    <Button>Log Out</Button>
+                    {links.map(
+                        (link, index): JSX.Element => (
+                            <Fragment key={index}>
+                                <NavLink to={link.to} onClick={props.toggle}>
+                                    {link.text}
+                                </NavLink>
+                                <hr />
+                            </Fragment>
+                        ),
+                    )}
                 </div>
+                <Button>Log Out</Button>
             </div>
             <div onClick={props.toggle} className={overlayClasses.join(' ')} />
         </Fragment>

@@ -1,5 +1,5 @@
 .Navbar {
-    background-color: darkgreen;
+    background-color: white;
     height: 50px;
     display: flex;
     justify-content: space-between;
@@ -24,12 +24,16 @@
 
     a {
         display: none;
+        color: green;
 
         &.Active {
             display: flex;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 25px;
+            font-size: 32px;
         }
+    }
+
+    svg {
+        color: green;
     }
 }

@@ -4,7 +4,7 @@ import React, { DetailedHTMLProps } from 'react';
 
 // ------------------------------ CUSTOM MODULES ------------------------------
 
-import classes from './Button.module.css';
+import classes from './Button.module.scss';
 
 // -------------------------------- VARIABLES ---------------------------------
 

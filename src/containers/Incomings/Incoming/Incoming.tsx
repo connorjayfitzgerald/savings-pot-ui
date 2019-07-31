@@ -27,7 +27,7 @@ interface IncomingProps {
 export const Incoming = (props: IncomingProps): JSX.Element => {
     return (
         <div className={classes.Incoming}>
-            <h3>{props.amount.toFixed(2)}</h3>
+            <h3>£{props.amount.toFixed(2)}</h3>
             <p className={classes.Capitalise}>{props.frequency}</p>
             <p>{props.description}</p>
             <p>

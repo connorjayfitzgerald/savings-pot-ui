@@ -1,0 +1,38 @@
+.FieldSet {
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    color: white;
+
+    legend {
+        margin-left: 5px;
+        text-align: left;
+        color: rgba(255, 255, 255, 0.4);
+        min-height: 25px;
+        font-size: 18px;
+    }
+
+    &.Invalid {
+        border-color: red;
+
+        legend {
+            color: red;
+        }
+    }
+
+    input {
+        padding: 0 8px;
+        margin: 0;
+        width: 100%;
+        background: 0;
+        border: 0;
+        color: white;
+        margin-bottom: 9px;
+        font-size: 20px;
+
+        &:focus {
+            border: 0;
+            outline: 0;
+        }
+    }
+}
