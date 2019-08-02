@@ -21,6 +21,6 @@
     }
 
     &.Debt svg {
-        color: rgba(255, 86, 86, 0.7);
+        color: $negative-color;
     }
 }

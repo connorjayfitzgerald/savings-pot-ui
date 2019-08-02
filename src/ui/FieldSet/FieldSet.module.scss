@@ -2,23 +2,23 @@
 
 .FieldSet {
     padding: 0;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba($secondary-color, 0.4);
     border-radius: 5px;
     color: $secondary-color;
 
     legend {
         margin-left: 5px;
         text-align: left;
-        color: rgba(255, 255, 255, 0.4);
+        color: rgba($secondary-color, 0.4);
         min-height: 25px;
         font-size: 18px;
     }
 
     &.Invalid {
-        border-color: red;
+        border-color: rgba($error-color, 0.7);
 
         legend {
-            color: red;
+            color: rgba($error-color, 0.7);
         }
     }
 

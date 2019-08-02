@@ -12,12 +12,12 @@
     font-family: inherit;
 
     &:hover {
-        background: rgba(255, 255, 255, 0.15);
+        background: rgba($secondary-color, 0.15);
     }
 
     &:disabled {
-        border-color: rgba(255, 255, 255, 0.4);
-        color: rgba(255, 255, 255, 0.4);
+        border-color: rgba($secondary-color, 0.4);
+        color: rgba($secondary-color, 0.4);
 
         &:hover {
             background: none;
