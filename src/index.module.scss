@@ -1,6 +1,7 @@
+@import "./config/colors";
+
 body {
-    background: rgb(2,0,36);
-    background: linear-gradient(43deg, #020024 0%, #046622 57%, #00d4ff 100%);
+    background: linear-gradient(22deg, #000000 10%,  $background-color 100%);
     margin: 0;
     font-family: 'Blinker', sans-serif;
     height: 100vh;

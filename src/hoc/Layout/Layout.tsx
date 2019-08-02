@@ -1,6 +1,6 @@
 // ------------------------------- NODE MODULES -------------------------------
 
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 
 // ------------------------------ CUSTOM MODULES ------------------------------
 
@@ -15,14 +15,10 @@ interface LayoutProps {
 }
 
 export const Layout = (props: LayoutProps): JSX.Element => {
-    const [showDrawer, setShowDrawer] = useState(false);
-
-    const toggleDrawer = () => setShowDrawer(prevState => !prevState);
-
     return (
         <Fragment>
-            <Navbar toggleDrawer={toggleDrawer} />
-            <SideDrawer shown={showDrawer} toggle={toggleDrawer} />
+            <Navbar />
+            <SideDrawer />
             <main>{props.children}</main>
         </Fragment>
     );

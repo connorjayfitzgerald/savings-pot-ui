@@ -2,12 +2,12 @@
 
 // ------------------------------ CUSTOM MODULES ------------------------------
 
-import { Navbar } from './Navbar/Navbar';
-import { SideDrawer } from './SideDrawer/SideDrawer';
-import { Loading } from './Loading/Loading';
+import { Auth } from './Auth/Auth';
+import { Incomings } from './Incomings/Incomings';
+import { Summary } from './Summary/Summary';
 
 // -------------------------------- VARIABLES ---------------------------------
 
 // ----------------------------- FILE DEFINITION ------------------------------
 
-export { Loading, Navbar, SideDrawer };
+export { Auth, Incomings, Summary };

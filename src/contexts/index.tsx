@@ -2,12 +2,10 @@
 
 // ------------------------------ CUSTOM MODULES ------------------------------
 
-import { Navbar } from './Navbar/Navbar';
-import { SideDrawer } from './SideDrawer/SideDrawer';
-import { Loading } from './Loading/Loading';
+import { AppContext, AppContextProvider } from './AppContext';
 
 // -------------------------------- VARIABLES ---------------------------------
 
 // ----------------------------- FILE DEFINITION ------------------------------
 
-export { Loading, Navbar, SideDrawer };
+export { AppContext, AppContextProvider };

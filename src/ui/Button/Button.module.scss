@@ -1,9 +1,11 @@
+@import "../../config/colors";
+
 .Button {
     background: 0;
-    border: 2px solid white;
+    border: 2px solid $secondary-color;
     height: 30px;
     min-width: 100px;
-    color: white;
+    color: $secondary-color;
     border-radius: 6px;
     font-size: 17px;
     cursor: pointer;

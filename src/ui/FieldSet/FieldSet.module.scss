@@ -1,8 +1,10 @@
+@import "../../config/colors";
+
 .FieldSet {
     padding: 0;
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 5px;
-    color: white;
+    color: $secondary-color;
 
     legend {
         margin-left: 5px;
@@ -26,7 +28,7 @@
         width: 100%;
         background: 0;
         border: 0;
-        color: white;
+        color: $secondary-color;
         margin-bottom: 9px;
         font-size: 20px;
 

@@ -5,10 +5,10 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 
 // ------------------------------ CUSTOM MODULES ------------------------------
 
-import { Auth } from './containers/Auth/Auth';
-import { Layout } from './hoc/Layout/Layout';
-import { Summary } from './containers/Summary/Summary';
-import { Incomings } from './containers/Incomings/Incomings';
+import { Auth, Incomings, Summary } from './containers';
+import { Layout } from './hoc';
+import { AppContextProvider } from './contexts';
+import { Loading } from './components';
 
 // -------------------------------- VARIABLES ---------------------------------
 
@@ -16,10 +16,13 @@ import { Incomings } from './containers/Incomings/Incomings';
 
 export const App: React.FC = (): JSX.Element => {
     const [authenticated, setAuthenticated] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
 
     const toggleAuth = () => setAuthenticated(prevState => !prevState);
+    const toggleSideDrawer = () => setSideDrawerOpen(prevState => !prevState);
 
-    return authenticated ? (
+    const displayed = authenticated ? (
         <Layout>
             <Switch>
                 <Route path="/" exact component={Summary} />
@@ -29,5 +32,12 @@ export const App: React.FC = (): JSX.Element => {
         </Layout>
     ) : (
         <Auth toggleAuth={toggleAuth} />
+    );
+
+    return (
+        <AppContextProvider value={{ loading, setLoading, sideDrawerOpen, toggleSideDrawer }}>
+            <Loading show={loading} />
+            {displayed}
+        </AppContextProvider>
     );
 };

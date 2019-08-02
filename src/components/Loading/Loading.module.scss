@@ -1,0 +1,20 @@
+@import "../../config/colors";
+
+.Loading {
+    background: $secondary-color;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    z-index: 400;
+    opacity: 0.6;
+    transition: all .25s;
+}
+
+.Hide {
+    opacity: 0;
+    visibility: hidden;
+}

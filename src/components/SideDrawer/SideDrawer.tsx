@@ -1,27 +1,25 @@
 // ------------------------------- NODE MODULES -------------------------------
 
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 
 // ------------------------------ CUSTOM MODULES ------------------------------
 
 import classes from './SideDrawer.module.scss';
 import { Button } from '../../ui';
+import { AppContext } from '../../contexts';
 
 // -------------------------------- VARIABLES ---------------------------------
 
 // ----------------------------- FILE DEFINITION ------------------------------
 
-interface SideDrawerProps {
-    shown: boolean;
-    toggle: () => void;
-}
+export const SideDrawer = (): JSX.Element => {
+    const { sideDrawerOpen, toggleSideDrawer } = useContext(AppContext);
 
-export const SideDrawer = (props: SideDrawerProps): JSX.Element => {
     const siderawerClasses = [classes.SideDrawer];
     const overlayClasses = [classes.Overlay];
 
-    if (props.shown) {
+    if (sideDrawerOpen) {
         siderawerClasses.push(classes.Shown);
         overlayClasses.push(classes.Shown);
     } else {
@@ -63,7 +61,7 @@ export const SideDrawer = (props: SideDrawerProps): JSX.Element => {
                     {links.map(
                         (link, index): JSX.Element => (
                             <Fragment key={index}>
-                                <NavLink to={link.to} onClick={props.toggle}>
+                                <NavLink to={link.to} onClick={toggleSideDrawer}>
                                     {link.text}
                                 </NavLink>
                                 <hr />
@@ -73,7 +71,7 @@ export const SideDrawer = (props: SideDrawerProps): JSX.Element => {
                 </div>
                 <Button>Log Out</Button>
             </div>
-            <div onClick={props.toggle} className={overlayClasses.join(' ')} />
+            <div onClick={toggleSideDrawer} className={overlayClasses.join(' ')} />
         </Fragment>
     );
 };

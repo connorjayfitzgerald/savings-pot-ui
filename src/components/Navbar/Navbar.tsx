@@ -1,26 +1,25 @@
 // ------------------------------- NODE MODULES -------------------------------
 
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 
 // ------------------------------ CUSTOM MODULES ------------------------------
 
 import classes from './Navbar.module.scss';
 import { Burger } from './Burger/Burger';
+import { AppContext } from '../../contexts';
 
 // -------------------------------- VARIABLES ---------------------------------
 
 // ----------------------------- FILE DEFINITION ------------------------------
 
-interface NavbarProps {
-    toggleDrawer: () => void;
-}
+export const Navbar = (): JSX.Element => {
+    const { toggleSideDrawer } = useContext(AppContext);
 
-export const Navbar = (props: NavbarProps): JSX.Element => {
     return (
         <header className={classes.Navbar}>
             <nav>
-                <Burger onClick={props.toggleDrawer} />
+                <Burger onClick={toggleSideDrawer} />
                 <ul>
                     <NavLink activeClassName={classes.Active} exact to="/">
                         Summary

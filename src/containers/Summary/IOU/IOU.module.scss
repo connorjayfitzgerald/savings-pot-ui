@@ -1,11 +1,13 @@
+@import "../../../config/colors";
+
 .IOU {
     margin: 8px 16px;
     display: flex;
     align-items: center;
-    border: 1px solid white;
+    border: 1px solid $secondary-color;
     border-radius: 5px;
     box-shadow: 1px 1px 5px;
-    color: white;
+    color: $secondary-color;
 
     p {
         margin: 0;
@@ -14,7 +16,7 @@
     }
 
     svg {
-        color: white;
+        color: $secondary-color;
         margin: 3px 16px;
     }
 

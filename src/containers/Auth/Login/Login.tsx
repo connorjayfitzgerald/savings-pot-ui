@@ -1,6 +1,6 @@
 // ------------------------------- NODE MODULES -------------------------------
 
-import React, { FormEvent, useState, ChangeEvent } from 'react';
+import React, { FormEvent, useState, ChangeEvent, useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPiggyBank } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 
 import classes from './Login.module.scss';
 import { Button, FieldSet } from '../../../ui';
+import { AppContext } from '../../../contexts';
 
 // -------------------------------- VARIABLES ---------------------------------
 
@@ -24,10 +25,17 @@ interface LoginProps {
 }
 
 export const Login = (props: LoginProps): JSX.Element => {
+    const appContext = useContext(AppContext);
+
     const attemptLogin = (event: FormEvent<HTMLFormElement>): void => {
         event.preventDefault();
 
-        props.toggleAuth();
+        appContext.setLoading(true);
+
+        setTimeout(() => {
+            props.toggleAuth();
+            appContext.setLoading(false);
+        }, 1000);
     };
 
     const [details, setDetails] = useState(initialState);
