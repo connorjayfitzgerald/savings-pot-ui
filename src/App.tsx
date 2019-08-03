@@ -15,7 +15,7 @@ import { Loading } from './components';
 // ----------------------------- FILE DEFINITION ------------------------------
 
 const BaseApp = (): JSX.Element => {
-    const [authenticated, setAuthenticated] = useState(true);
+    const [authenticated, setAuthenticated] = useState(false);
     const [loading, setLoading] = useState(false);
     const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
 
