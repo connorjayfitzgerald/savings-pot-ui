@@ -8,7 +8,14 @@ import { createContext, SetStateAction } from 'react';
 
 // -------------------------------- VARIABLES ---------------------------------
 
-const defaults = {
+export interface AppContext {
+    loading: boolean;
+    setLoading: (value: SetStateAction<boolean>) => void;
+    sideDrawerOpen: boolean;
+    toggleSideDrawer: () => void;
+}
+
+const defaults: AppContext = {
     loading: false,
     setLoading: (value: SetStateAction<boolean>) => {},
     sideDrawerOpen: false,

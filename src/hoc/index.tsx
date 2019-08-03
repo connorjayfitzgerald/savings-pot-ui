@@ -3,9 +3,10 @@
 // ------------------------------ CUSTOM MODULES ------------------------------
 
 import { Layout } from './Layout/Layout';
+import { withAutoScroll } from './withAutoScroll/withAutoScroll';
 
 // -------------------------------- VARIABLES ---------------------------------
 
 // ----------------------------- FILE DEFINITION ------------------------------
 
-export { Layout };
+export { Layout, withAutoScroll };

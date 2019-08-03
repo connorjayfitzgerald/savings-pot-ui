@@ -6,15 +6,15 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 // ------------------------------ CUSTOM MODULES ------------------------------
 
 import { Auth, Incomings, Summary } from './containers';
-import { Layout } from './hoc';
-import { AppContextProvider } from './contexts';
+import { Layout, withAutoScroll } from './hoc';
+import { RootContextProvider } from './contexts';
 import { Loading } from './components';
 
 // -------------------------------- VARIABLES ---------------------------------
 
 // ----------------------------- FILE DEFINITION ------------------------------
 
-export const App: React.FC = (): JSX.Element => {
+const BaseApp = (): JSX.Element => {
     const [authenticated, setAuthenticated] = useState(false);
     const [loading, setLoading] = useState(false);
     const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
@@ -34,10 +34,15 @@ export const App: React.FC = (): JSX.Element => {
         <Auth toggleAuth={toggleAuth} />
     );
 
+    const appContext = { loading, setLoading, sideDrawerOpen, toggleSideDrawer };
+    const userContext = { authenticated, setAuthenticated };
+
     return (
-        <AppContextProvider value={{ loading, setLoading, sideDrawerOpen, toggleSideDrawer }}>
+        <RootContextProvider app={appContext} user={userContext}>
             <Loading show={loading} />
             {displayed}
-        </AppContextProvider>
+        </RootContextProvider>
     );
 };
+
+export const App = withAutoScroll(BaseApp);

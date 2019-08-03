@@ -6,8 +6,7 @@ import { NavLink } from 'react-router-dom';
 // ------------------------------ CUSTOM MODULES ------------------------------
 
 import classes from './SideDrawer.module.scss';
-import { Button } from '../../ui';
-import { AppContext } from '../../contexts';
+import { AppContext, UserContext } from '../../contexts';
 
 // -------------------------------- VARIABLES ---------------------------------
 
@@ -15,6 +14,7 @@ import { AppContext } from '../../contexts';
 
 export const SideDrawer = (): JSX.Element => {
     const { sideDrawerOpen, toggleSideDrawer } = useContext(AppContext);
+    const { setAuthenticated } = useContext(UserContext);
 
     const siderawerClasses = [classes.SideDrawer];
     const overlayClasses = [classes.Overlay];
@@ -68,8 +68,16 @@ export const SideDrawer = (): JSX.Element => {
                             </Fragment>
                         ),
                     )}
+                    <NavLink
+                        to="/"
+                        onClick={() => {
+                            setAuthenticated(false);
+                            toggleSideDrawer();
+                        }}
+                    >
+                        Log Out
+                    </NavLink>
                 </div>
-                <Button>Log Out</Button>
             </div>
             <div onClick={toggleSideDrawer} className={overlayClasses.join(' ')} />
         </Fragment>
