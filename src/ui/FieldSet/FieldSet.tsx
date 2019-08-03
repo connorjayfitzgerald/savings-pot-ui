@@ -12,6 +12,7 @@ import classes from './FieldSet.module.scss';
 
 interface FieldSetProps {
     invalid?: boolean;
+    autoFocus?: boolean;
     placeholder: string;
     type?: string;
     value: string | number;
@@ -27,7 +28,7 @@ export const FieldSet = (props: FieldSetProps): JSX.Element => {
 
     return (
         <fieldset className={appliedClasses.join(' ')}>
-            <input type={props.type} value={props.value} onChange={props.onChange}></input>
+            <input autoFocus={props.autoFocus} type={props.type} value={props.value} onChange={props.onChange}></input>
             <legend>{props.placeholder}</legend>
         </fieldset>
     );

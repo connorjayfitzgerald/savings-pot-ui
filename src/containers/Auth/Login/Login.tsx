@@ -1,6 +1,6 @@
 // ------------------------------- NODE MODULES -------------------------------
 
-import React, { FormEvent, useState, ChangeEvent, useContext } from 'react';
+import React, { FormEvent, useState, ChangeEvent, useContext, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPiggyBank } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
@@ -26,9 +26,15 @@ interface LoginProps {
 
 export const Login = (props: LoginProps): JSX.Element => {
     const appContext = useContext(AppContext);
+    const loginButtonRef = useRef<HTMLButtonElement>(null);
 
     const attemptLogin = (event: FormEvent<HTMLFormElement>): void => {
         event.preventDefault();
+
+        if (loginButtonRef.current) {
+            // To close mobile keyboard when submitting
+            loginButtonRef.current.focus();
+        }
 
         appContext.setLoading(true);
 
@@ -54,14 +60,21 @@ export const Login = (props: LoginProps): JSX.Element => {
     return (
         <form onSubmit={attemptLogin} className={classes.Login}>
             <FontAwesomeIcon size="6x" icon={faPiggyBank} />
-            <FieldSet placeholder="Username" value={details.username} onChange={createChangeHandler('username')} />
+            <FieldSet
+                autoFocus
+                placeholder="Username"
+                value={details.username}
+                onChange={createChangeHandler('username')}
+            />
             <FieldSet
                 placeholder="Password"
                 type="password"
                 value={details.password}
                 onChange={createChangeHandler('password')}
             />
-            <Button disabled={!(details.username && details.password)}>Log In</Button>
+            <Button ref={loginButtonRef} disabled={!(details.username && details.password)}>
+                Log In
+            </Button>
             <p>
                 <Link to="/register">Click here</Link> to sign up
             </p>

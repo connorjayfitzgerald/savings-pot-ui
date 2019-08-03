@@ -1,6 +1,6 @@
 // ------------------------------- NODE MODULES -------------------------------
 
-import React, { DetailedHTMLProps } from 'react';
+import React, { ButtonHTMLAttributes, DetailedHTMLProps, forwardRef, Ref } from 'react';
 
 // ------------------------------ CUSTOM MODULES ------------------------------
 
@@ -10,12 +10,15 @@ import classes from './Button.module.scss';
 
 // ----------------------------- FILE DEFINITION ------------------------------
 
-export const Button = (
-    props: DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>,
-): JSX.Element => {
-    return (
-        <button className={classes.Button} {...props}>
+export const Button = forwardRef(
+    (
+        props: DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>,
+        ref: Ref<HTMLButtonElement>,
+    ): JSX.Element => (
+        <button ref={ref} className={classes.Button} {...props}>
             {props.children}
         </button>
-    );
-};
+    ),
+);
+
+Button.displayName = 'Button';
