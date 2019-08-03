@@ -11,6 +11,7 @@ import classes from './FieldSet.module.scss';
 // ----------------------------- FILE DEFINITION ------------------------------
 
 interface FieldSetProps {
+    invert?: boolean;
     invalid?: boolean;
     autoFocus?: boolean;
     placeholder: string;
@@ -22,9 +23,8 @@ interface FieldSetProps {
 export const FieldSet = (props: FieldSetProps): JSX.Element => {
     const appliedClasses = [classes.FieldSet];
 
-    if (props.invalid) {
-        appliedClasses.push(classes.Invalid);
-    }
+    if (props.invalid) appliedClasses.push(classes.Invalid);
+    if (props.invert) appliedClasses.push(classes.Invert);
 
     return (
         <fieldset className={appliedClasses.join(' ')}>

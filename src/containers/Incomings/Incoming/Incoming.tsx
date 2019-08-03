@@ -6,6 +6,8 @@ import React from 'react';
 
 import classes from './Incoming.module.scss';
 import { formatDate } from '../../../utils';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPencilAlt, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 // -------------------------------- VARIABLES ---------------------------------
 
@@ -20,6 +22,7 @@ interface IncomingProps {
     endDate?: Date;
     createdAt: Date;
     updatedAt: Date;
+    onDelete?: () => void;
 }
 
 // ----------------------------- FILE DEFINITION ------------------------------
@@ -27,7 +30,17 @@ interface IncomingProps {
 export const Incoming = (props: IncomingProps): JSX.Element => {
     return (
         <div className={classes.Incoming}>
-            <h3>£{props.amount.toFixed(2)}</h3>
+            <div className={classes.Header}>
+                <div className={classes.Icon} onClick={props.onDelete}>
+                    <FontAwesomeIcon size="1x" icon={faPencilAlt} />
+                </div>
+
+                <h3>£{props.amount.toFixed(2)}</h3>
+
+                <div className={classes.Icon} onClick={props.onDelete}>
+                    <FontAwesomeIcon icon={faTrashAlt} />
+                </div>
+            </div>
             <p className={classes.Capitalise}>{props.frequency}</p>
             <p>{props.description}</p>
             <p>

@@ -37,4 +37,17 @@
             outline: 0;
         }
     }
+
+    &.Invert {
+        border: 1px solid rgba($primary-color, 0.4);
+        color: $primary-color;
+
+        legend {
+            color: rgba($primary-color, 0.4);
+        }
+
+        input {
+            color: $primary-color;
+        }
+    }
 }

@@ -14,6 +14,7 @@
     max-width: 300px;
     align-items: center;
     padding-top: 70px;
+    transform: translateX(-100%);
 
     button {
         margin: 16px 0;
@@ -46,28 +47,5 @@
 
     &.Shown {
         transform: translateX(0);
-    }
-
-    &.Hidden {
-        transform: translateX(-100%);
-    }
-}
-
-.Overlay {
-    height: 100vh;
-    width: 100vw;
-    z-index: 100;
-    position: fixed;
-    background-color: black;
-    opacity: 0.5;
-    transition: opacity .25s;
-
-    &.Shown {
-        opacity: 0.5;
-    }
-
-    &.Hidden {
-        opacity: 0;
-        visibility: hidden;
     }
 }

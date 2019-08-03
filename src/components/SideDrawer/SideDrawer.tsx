@@ -7,6 +7,7 @@ import { NavLink } from 'react-router-dom';
 
 import classes from './SideDrawer.module.scss';
 import { AppContext, UserContext } from '../../contexts';
+import { Overlay } from '../Overlay/Overlay';
 
 // -------------------------------- VARIABLES ---------------------------------
 
@@ -16,16 +17,9 @@ export const SideDrawer = (): JSX.Element => {
     const { sideDrawerOpen, toggleSideDrawer } = useContext(AppContext);
     const { setAuthenticated } = useContext(UserContext);
 
-    const siderawerClasses = [classes.SideDrawer];
-    const overlayClasses = [classes.Overlay];
+    const sideDrawerClasses = [classes.SideDrawer];
 
-    if (sideDrawerOpen) {
-        siderawerClasses.push(classes.Shown);
-        overlayClasses.push(classes.Shown);
-    } else {
-        siderawerClasses.push(classes.Hidden);
-        overlayClasses.push(classes.Hidden);
-    }
+    if (sideDrawerOpen) sideDrawerClasses.push(classes.Shown);
 
     const links = [
         {
@@ -55,8 +49,8 @@ export const SideDrawer = (): JSX.Element => {
     ];
 
     return (
-        <Fragment>
-            <div className={siderawerClasses.join(' ')}>
+        <>
+            <div className={sideDrawerClasses.join(' ')}>
                 <div className={classes.SideDrawerLinks}>
                     {links.map(
                         (link, index): JSX.Element => (
@@ -79,7 +73,7 @@ export const SideDrawer = (): JSX.Element => {
                     </NavLink>
                 </div>
             </div>
-            <div onClick={toggleSideDrawer} className={overlayClasses.join(' ')} />
-        </Fragment>
+            <Overlay shown={sideDrawerOpen} toggle={toggleSideDrawer} />
+        </>
     );
 };

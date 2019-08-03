@@ -1,3 +1,19 @@
+@import "../../config/colors";
+
 .Incomings {
-    padding: 10px;
+    text-align: center;
+
+    > * {
+        margin: 16px;
+    }
+
+    svg {
+        color: $secondary-color;
+    }
+}
+
+.ButtonRow {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-evenly;
 }

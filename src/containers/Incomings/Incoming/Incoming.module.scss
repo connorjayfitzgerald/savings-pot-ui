@@ -5,18 +5,36 @@
     border-radius: 5px;
     text-align: center;
     color: $secondary-color;
-    margin: 10px;
     box-shadow: 1px 1px 5px;
-
-    > * {
-        margin: 0;
-    }
 
     p {
         margin: 0;
 
         &.Capitalise {
             text-transform: capitalize;
+        }
+    }
+
+    .Header {
+        > * {
+            margin: 0;
+        }
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 4px;
+        
+        svg {
+            color: $secondary-color;
+        }
+
+        .Icon:hover {
+            cursor: pointer;
+            
+            svg {
+                color: lighten($primary-color, 20)
+            };
         }
     }
 }

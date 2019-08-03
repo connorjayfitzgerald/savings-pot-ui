@@ -1,26 +1,45 @@
 @import "../../config/colors";
 
 .Button {
-    background: 0;
-    border: 2px solid $secondary-color;
-    height: 30px;
-    min-width: 100px;
-    color: $secondary-color;
-    border-radius: 6px;
-    font-size: 17px;
-    cursor: pointer;
-    font-family: inherit;
+    display: flex;
+    justify-content: center;
 
-    &:hover {
-        background: rgba($secondary-color, 0.15);
-    }
-
-    &:disabled {
-        border-color: rgba($secondary-color, 0.4);
-        color: rgba($secondary-color, 0.4);
+    button {
+        background: 0;
+        border: 2px solid $secondary-color;
+        height: 30px;
+        min-width: 100px;
+        color: $secondary-color;
+        border-radius: 6px;
+        font-size: 17px;
+        cursor: pointer;
+        font-family: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
 
         &:hover {
-            background: none;
+            background: rgba($secondary-color, 0.15);
+        }
+
+        &:disabled {
+            border-color: rgba($secondary-color, 0.4);
+            color: rgba($secondary-color, 0.4);
+
+            &:hover {
+                background: none;
+            }
+        }
+    }
+
+    &.Invert {
+        button {
+            color: $primary-color;
+            border-color: $primary-color;
+
+            &hover {
+                background: rgba($primary-color, 0.15);
+            }
         }
     }
 }
