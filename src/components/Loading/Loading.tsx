@@ -13,13 +13,13 @@ import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 // ----------------------------- FILE DEFINITION ------------------------------
 
 interface LoadingProps {
-    show: boolean;
+    shown: boolean;
 }
 
 export const Loading = (props: LoadingProps): JSX.Element => {
     return (
-        <div className={`${classes.Loading}${props.show ? '' : ` ${classes.Hide}`}`}>
-            <FontAwesomeIcon size={'6x'} icon={faCircleNotch} spin className={props.show ? '' : ` ${classes.Hide}`} />
+        <div className={`${classes.Loading}${props.shown ? '' : ` ${classes.Hide}`}`}>
+            <FontAwesomeIcon size={'6x'} icon={faCircleNotch} spin className={props.shown ? '' : ` ${classes.Hide}`} />
         </div>
     );
 };

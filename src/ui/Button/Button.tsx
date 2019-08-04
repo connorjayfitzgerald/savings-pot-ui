@@ -1,6 +1,6 @@
 // ------------------------------- NODE MODULES -------------------------------
 
-import React, { forwardRef, Ref } from 'react';
+import React, { forwardRef, Ref, MouseEvent } from 'react';
 
 // ------------------------------ CUSTOM MODULES ------------------------------
 
@@ -15,7 +15,7 @@ interface ButtonProps {
     disabled?: boolean;
     invert?: boolean;
     children: any;
-    onClick?: () => void;
+    onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
 export const Button = forwardRef(

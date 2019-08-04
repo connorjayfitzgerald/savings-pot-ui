@@ -39,7 +39,7 @@ const BaseApp = (): JSX.Element => {
 
     return (
         <RootContextProvider app={appContext} user={userContext}>
-            <Loading show={loading} />
+            <Loading shown={loading} />
             {displayed}
         </RootContextProvider>
     );

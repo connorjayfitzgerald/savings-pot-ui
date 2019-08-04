@@ -40,6 +40,11 @@
             &hover {
                 background: rgba($primary-color, 0.15);
             }
+
+            &:disabled {
+                border-color: rgba($primary-color, 0.4);
+                color: rgba($primary-color, 0.4);
+            }
         }
     }
 }

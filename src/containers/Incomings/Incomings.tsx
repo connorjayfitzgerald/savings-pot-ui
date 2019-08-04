@@ -1,6 +1,6 @@
 // ------------------------------- NODE MODULES -------------------------------
 
-import React, { useState, KeyboardEvent, useContext } from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
@@ -8,9 +8,8 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 import classes from './Incomings.module.scss';
 import { Incoming } from './Incoming/Incoming';
-import { Button, FieldSet } from '../../ui';
-import { Modal } from '../../components';
-import { AppContext } from '../../contexts';
+import { Button } from '../../ui';
+import { NewIncoming } from './NewIncoming/NewIncoming';
 
 // -------------------------------- VARIABLES ---------------------------------
 
@@ -43,62 +42,18 @@ const exampleData = [
 // ----------------------------- FILE DEFINITION ------------------------------
 
 export const Incomings = (): JSX.Element => {
-    const [showModal, setShowModal] = useState(false);
-    const { setLoading } = useContext(AppContext);
-
-    const toggleModal = () => setShowModal(prevState => !prevState);
-
-    const submitNewIncoming = () => {
-        setLoading(true);
-
-        setTimeout(() => {
-            setShowModal(false);
-            setLoading(false);
-        }, 1000);
-    };
-
-    // const confirmDelete = (
-    //     <form className={classes.DeleteModal}>
-    //         <p>Are you sure you would like to remove this incoming?</p>
-    //         <div className={classes.ButtonRow}>
-    //             <Button invert>Yes</Button>
-    //             <Button invert>No</Button>
-    //         </div>
-    //     </form>
-    // );
-
-    const isEnterPressed = (event: KeyboardEvent<HTMLDivElement>) => event.key === 'Enter';
-
-    const newIncoming = (
-        <div
-            onKeyDown={event => (isEnterPressed(event) ? submitNewIncoming() : null)}
-            className={classes.NewIncomingModal}
-        >
-            <FieldSet autoFocus invert placeholder="Value" value={100} onChange={() => {}} />
-            <FieldSet invert placeholder="Description" value="Testing" onChange={() => {}} />
-            <FieldSet invert placeholder="Start" type="Date" value="2019-01-01" onChange={() => {}} />
-            <FieldSet invert placeholder="End" type="Date" value="2019-12-31" onChange={() => {}} />
-            <div className={classes.ButtonRow}>
-                <Button onClick={submitNewIncoming} invert>
-                    Save
-                </Button>
-                <Button onClick={toggleModal} invert>
-                    Cancel
-                </Button>
-            </div>
-        </div>
-    );
+    const [creatingIncoming, setCreatingIncoming] = useState(false);
+    const toggleNewIncoming = () => setCreatingIncoming(prevState => !prevState);
 
     return (
         <>
-            <Modal shown={showModal} toggle={toggleModal}>
-                {newIncoming}
-            </Modal>
+            <NewIncoming shown={creatingIncoming} toggle={toggleNewIncoming} />
+
             <div className={classes.Incomings}>
                 {exampleData.map(incoming => (
                     <Incoming key={incoming.id} {...incoming} />
                 ))}
-                <Button onClick={toggleModal}>
+                <Button onClick={toggleNewIncoming}>
                     Add
                     <FontAwesomeIcon icon={faPlus} />
                 </Button>

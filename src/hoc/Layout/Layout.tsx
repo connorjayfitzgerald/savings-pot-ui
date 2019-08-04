@@ -1,6 +1,6 @@
 // ------------------------------- NODE MODULES -------------------------------
 
-import React, { Fragment } from 'react';
+import React from 'react';
 
 // ------------------------------ CUSTOM MODULES ------------------------------
 
@@ -16,10 +16,10 @@ interface LayoutProps {
 
 export const Layout = (props: LayoutProps): JSX.Element => {
     return (
-        <Fragment>
+        <>
             <Navbar />
             <SideDrawer />
             <main>{props.children}</main>
-        </Fragment>
+        </>
     );
 };
