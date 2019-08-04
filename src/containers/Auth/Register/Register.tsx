@@ -1,6 +1,6 @@
 // ------------------------------- NODE MODULES -------------------------------
 
-import React, { FormEvent, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { isAlpha, isLength, isEmail } from 'validator';
 
@@ -57,7 +57,7 @@ export const Register = (): JSX.Element => {
             className={classes.Register}
             onSubmit={attemptRegister}
             data={form}
-            setter={setForm}
+            setData={setForm}
             fields={initialState}
         >
             <Button disabled={!form.valid}>Register</Button>

@@ -1,6 +1,6 @@
 // ------------------------------- NODE MODULES -------------------------------
 
-import React, { useContext, useState, FormEvent, MouseEvent } from 'react';
+import React, { useContext, useState, MouseEvent } from 'react';
 import { isISO8601 } from 'validator';
 
 // ------------------------------ CUSTOM MODULES ------------------------------
@@ -63,7 +63,7 @@ export const NewIncoming = (props: NewIncomingProps): JSX.Element => {
 
     return (
         <Modal shown={props.shown} toggle={props.toggle}>
-            <Form invert onSubmit={submitNewIncoming} data={form} setter={setForm} fields={fields}>
+            <Form invert onSubmit={submitNewIncoming} data={form} setData={setForm} fields={fields}>
                 <div className={classes.ButtonRow}>
                     <Button disabled={!form.valid} onClick={submitNewIncoming} invert>
                         Save

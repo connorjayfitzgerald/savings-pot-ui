@@ -45,7 +45,7 @@ interface FormData {
 interface FormProps {
     fields: FormFields;
     data: FormData;
-    setter: Dispatch<React.SetStateAction<FormData>>;
+    setData: Dispatch<React.SetStateAction<FormData>>;
     onSubmit: () => void;
     invert?: boolean;
     className?: string;
@@ -83,19 +83,21 @@ const createInitialState = (fields: FormFields): FormState => {
 };
 
 export const Form = (props: FormProps): JSX.Element => {
-    useEffect(() => {
-        props.setter(prevState => ({
-            ...prevState,
-            fields: createInitialState(props.fields),
-        }));
-    }, [props.fields]);
+    const { setData, fields } = props;
 
-    const fieldKeys = Reflect.ownKeys(props.data.fields).map(key => String(key));
+    useEffect(() => {
+        setData(prevState => ({
+            ...prevState,
+            fields: createInitialState(fields),
+        }));
+    }, [setData, fields]);
+
+    const fieldKeys = Reflect.ownKeys(props.fields).map(key => String(key));
 
     const createChangeHandler = (key: string) => (event: ChangeEvent<HTMLInputElement>): void => {
         const newValue = event.currentTarget.value;
 
-        props.setter(prevState => {
+        props.setData(prevState => {
             const { validator, monitors } = prevState.fields[key];
 
             const valid = validator ? validator(prevState.fields, newValue) : true;
@@ -144,19 +146,23 @@ export const Form = (props: FormProps): JSX.Element => {
     return (
         <div onKeyDown={event => (isEnterPressed(event) ? props.onSubmit() : null)} className={props.className}>
             {fieldKeys.map(key => {
-                const { placeholder, value, valid, type, touched } = props.data.fields[key];
+                if (props.data.fields[key]) {
+                    const { placeholder, value, valid, type, touched } = props.data.fields[key];
 
-                return (
-                    <FieldSet
-                        key={key}
-                        placeholder={placeholder}
-                        invalid={!valid && touched}
-                        value={value}
-                        onChange={createChangeHandler(key)}
-                        type={type}
-                        invert={props.invert}
-                    />
-                );
+                    return (
+                        <FieldSet
+                            key={key}
+                            placeholder={placeholder}
+                            invalid={!valid && touched}
+                            value={value}
+                            onChange={createChangeHandler(key)}
+                            type={type}
+                            invert={props.invert}
+                        />
+                    );
+                }
+
+                return null;
             })}
             {props.children}
         </div>
