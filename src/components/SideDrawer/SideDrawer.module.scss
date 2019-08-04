@@ -6,7 +6,7 @@
     width: 70vw;
     z-index: 200;
     position: fixed;
-    background: linear-gradient(0deg, lighten($primary-color, 10) 0%, $secondary-color 100%);
+    background-color: $secondary-color;
     transition: transform .25s;
     display: flex;
     flex-direction: column;
